@@ -24,7 +24,7 @@ This assignment includes 2 main components: Ansible Role & Terraform Module
 ### 2.2	Prerequisites
 2.2.1	Software version information
 
-![image](https://user-images.githubusercontent.com/98753976/160995898-0a9c3a43-3bd7-4e4a-a1de-ac857149ae98.png#gh-light-mode-only)
+![image](https://user-images.githubusercontent.com/98753976/160995898-0a9c3a43-3bd7-4e4a-a1de-ac857149ae98.png#gh-dark-mode-only)
 
 ### 2.2.2	Install Ansible, Terraform and AzureCLI
 
