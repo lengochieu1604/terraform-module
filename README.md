@@ -34,10 +34,10 @@ First of all, we will install AzureCLI, Ansible and Terraform using documentatio
 3.	https://learn.hashicorp.com/tutorials/terraform/install-cli
 
 ### 2.2.3	Setup Environments
-1. Login to Azure
-2. Install pywinrm in Ansible Server
-3. Terraform Init
-4. Set host_key_checking=false in ansible inventory file
+	1. Login to Azure
+	2. Install pywinrm in Ansible Server
+	3. Terraform Init
+	4. Set host_key_checking=false in ansible inventory file
 
 ## CHAPTER 3 	HOW TO DEPLOY
 ### 3.1	Create main.tf
