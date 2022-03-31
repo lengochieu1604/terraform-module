@@ -79,7 +79,7 @@ First of all, we will install AzureCLI, Ansible and Terraform using documentatio
   >Create resource to run ansible by using remote-exec
 	
 ### 3.7 Output
-![image](https://user-images.githubusercontent.com/98753976/161001784-feeeacc8-419f-4b4a-9ebf-57401f8136e5.png)
+![image](https://user-images.githubusercontent.com/98753976/161012717-a7a06abb-3a4c-4a3c-998e-aca2f56cbec3.png)
 
 
 ## CHAPTER 4 TROUBLESHOOTING
