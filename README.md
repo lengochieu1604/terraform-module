@@ -28,7 +28,7 @@
 
 ### 2.2.2	Install Ansible, Terraform and AzureCLI
 
->First of all, we will install AzureCLI, Ansible and Terraform using documentation below:
+	First of all, we will install AzureCLI, Ansible and Terraform using documentation below:
 	1. https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 	2. https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 	3. https://learn.hashicorp.com/tutorials/terraform/install-cli 
