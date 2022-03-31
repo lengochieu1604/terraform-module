@@ -31,10 +31,7 @@
 First of all, we will install AzureCLI, Ansible and Terraform using documentation below:
 	1.	https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 	2.	https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
-	3.	https://learn.hashicorp.com/tutorials/terraform/install-cli
-	- [x] #739
-	- [ ] https://github.com/octo-org/octo-repo/issues/740
-	- [ ] Add delight to the experience when all tasks are complete :tada:
+	3.	https://learn.hashicorp.com/tutorials/terraform/install-cli 
 
 ### 2.2.3	Setup Environments
 	1. Login to Azure
