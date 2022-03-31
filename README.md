@@ -2,21 +2,21 @@
 
 ## CHAPTER 1 	OBJECTIVES
 
-In my project. i will use terraform and ansible to build an infrastructure as code.
-  1.	Using Terraform, create a Linux VM (with the necessary resources to create a VM) on Azure
-  2.	Update Terraform to add 1 more Windows VM
-  3.	Use Ansible to install Java on 2 VMs 
-  4.	Combine the above steps into a single Terraform run
-  5.	Write an Ansible Role from the generated Ansible Playbook files + Write a Terraform module from the generated terraform files
-  6.	Move all to git for management
+	In my project. i will use terraform and ansible to build an infrastructure as code.
+	  1.	Using Terraform, create a Linux VM (with the necessary resources to create a VM) on Azure
+	  2.	Update Terraform to add 1 more Windows VM
+	  3.	Use Ansible to install Java on 2 VMs 
+	  4.	Combine the above steps into a single Terraform run
+	  5.	Write an Ansible Role from the generated Ansible Playbook files + Write a Terraform module from the generated terraform files
+	  6.	Move all to git for management
 
 ## CHAPTER 2 	INTRODUCTION 
 
 ### 2.1	Get Started
 
-This assignment includes 2 main components: Ansible Role & Terraform Module
-  o	Ansible Role creates ansible role to install Java on Linux VM and Windows VM.
-  o	Terraform Module build IaC consist of 2 VMs and create a connection to Ansible when we run terraform apply
+	This assignment includes 2 main components: Ansible Role & Terraform Module
+	  o	Ansible Role creates ansible role to install Java on Linux VM and Windows VM.
+	  o	Terraform Module build IaC consist of 2 VMs and create a connection to Ansible when we run terraform apply
 
 ### Architecture of assignment:
 ![image](https://user-images.githubusercontent.com/98753976/160995239-f572b8f7-6aa1-4b79-baec-43e437f2dc8f.png#gh-dark-mode-only)
@@ -29,9 +29,9 @@ This assignment includes 2 main components: Ansible Role & Terraform Module
 ### 2.2.2	Install Ansible, Terraform and AzureCLI
 
 First of all, we will install AzureCLI, Ansible and Terraform using documentation below:
-1.	https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
-2.	https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
-3.	https://learn.hashicorp.com/tutorials/terraform/install-cli
+	1.	https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
+	2.	https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+	3.	https://learn.hashicorp.com/tutorials/terraform/install-cli
 
 ### 2.2.3	Setup Environments
 	1. Login to Azure
@@ -42,7 +42,7 @@ First of all, we will install AzureCLI, Ansible and Terraform using documentatio
 ## CHAPTER 3 	HOW TO DEPLOY
 ### 3.1	Create main.tf
 ### 3.1.1	Provider
- We will create required_prooviders for main.tf, using the code bellow: 
+	 We will create required_prooviders for main.tf, using the code bellow: 
 ![image](https://user-images.githubusercontent.com/98753976/161001165-55bfe0bf-7684-4663-a3ed-fdd45791b2f7.png)
 
 
@@ -51,28 +51,29 @@ First of all, we will install AzureCLI, Ansible and Terraform using documentatio
 
 ### 3.1.3	Create necessary recouses for Azure VM
 
-Resource group, virtual network, subnet, public ip, network interface, linux and windows virtual machine, network security group
-Run the following commands to create a infrastrucre:
-> terraform apply 
+	Resource group, virtual network, subnet, public ip, network interface, linux and windows virtual machine, network security group
+	Run the following commands to create a infrastrucre:
+	> terraform apply 
 
 ### 3.2	File Separation
-We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.tfplan
-  1. Main.tfplan
-  2. Output.tf
-  3. Variable.tf
-  4. Terraform.tfvars
+	We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.tfplan
+	  1. Main.tfplan
+	  2. Output.tf
+	  3. Variable.tf
+	  4. Terraform.tfvars
+  
 ### 3.3 Create Terraform Module
-> Run terraform plan to check the result
+> Run terraform plan to check the result	
 
 ### 3.4	Create Inventory & Playbook
-  1. Inventory
-      We will provide a IP public and some necessary information for Inventory file
-  2. Playbook
+	  1. Inventory
+	      We will provide a IP public and some necessary information for Inventory file
+	  2. Playbook
  
 ### 3.5	Create Ansible Role
-  1. Task install java in Linux VM
-  2. Task install java in Windows VM
-  3.	Tasks file for role-java
+	  1. Task install java in Linux VM
+	  2. Task install java in Windows VM
+	  3.	Tasks file for role-java
 
 ### 3.6 Create a connection to ansible
   >Create resource to run ansible by using remote-exec
@@ -87,7 +88,7 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
 
 ### 4.1.1 Cann’t ping to Windows VM
 
-As I have mentioned, the two VMs in the same region and the same VNet, so it's mainly due to firewall settings! so try to first do the following:
+	As I have mentioned, the two VMs in the same region and the same VNet, so it's mainly due to firewall settings! so try to first do the following:
 	1.	Turn off Firewall, Or
 	2.	Allow Inbound ICMPv4 that blocked by default to enable PING between Azure VMs: 
 	> New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
