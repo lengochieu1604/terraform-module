@@ -148,7 +148,7 @@ Once azure-cli installed successfully we can verify installation by executing th
  
 ### 4.3.2 AZ login does not work for me inside VM
  	Solution:  
-	>az login --use-device-code
+>az login --use-device-code
  
 
 
