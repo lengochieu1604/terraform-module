@@ -22,7 +22,7 @@ This assignment includes 2 main components: Ansible Role & Terraform Module
 ![image](https://user-images.githubusercontent.com/98753976/160995239-f572b8f7-6aa1-4b79-baec-43e437f2dc8f.png#gh-dark-mode-only)
 
 ### 2.2	Prerequisites
-2.2.1	Software version information
+### 2.2.1	Software version information
 
 ![image](https://user-images.githubusercontent.com/98753976/160995898-0a9c3a43-3bd7-4e4a-a1de-ac857149ae98.png#gh-dark-mode-only)
 
@@ -38,3 +38,52 @@ First of all, we will install AzureCLI, Ansible and Terraform using documentatio
 2. Install pywinrm in Ansible Server
 3. Terraform Init
 4. Set host_key_checking=false in ansible inventory file
+
+## CHAPTER 3 	HOW TO DEPLOY
+### 3.1	Create main.tf
+### 3.1.1	Provider
+ We will create required_prooviders for main.tf, using the code bellow: 
+![image](https://user-images.githubusercontent.com/98753976/161001165-55bfe0bf-7684-4663-a3ed-fdd45791b2f7.png)
+
+
+### 3.1.2	Configure the Microsoft Azure Provider
+![image](https://user-images.githubusercontent.com/98753976/161001184-a96af59b-afed-4165-b15f-d6de2e8d238a.png)
+
+### 3.1.3	Create necessary recouses for Azure VM
+
+Resource group, virtual network, subnet, public ip, network interface, linux and windows virtual machine, network security group
+Run the following commands to create a infrastrucre:
+> terraform apply 
+
+### 3.2	File Separation
+We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.tfplan
+  1. Main.tfplan
+  2. Output.tf
+  3. Variable.tf
+  4. Terraform.tfvars
+
+### 3.3	Create Terraform Module
+> Run terraform plan to check the result
+
+###3.4	Create Inventory & Playbook
+  1. Inventory
+      We will provide a IP public and some necessary information for Inventory file
+  2. Playbook
+ 
+###3.5	Create Ansible Role
+  1. Task install java in Linux VM
+  2. Task install java in Windows VM
+  3.	Tasks file for role-java
+
+3.6	Create a connection to ansible
+  >Create resource to run ansible by using remote-exec
+	
+ 
+3.7	Output
+![image](https://user-images.githubusercontent.com/98753976/161001784-feeeacc8-419f-4b4a-9ebf-57401f8136e5.png)
+
+ 
+
+
+
+
