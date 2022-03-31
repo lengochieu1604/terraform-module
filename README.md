@@ -73,7 +73,7 @@ First of all, we will install AzureCLI, Ansible and Terraform using documentatio
 ### 3.5	Create Ansible Role
 	  1. Task install java in Linux VM
 	  2. Task install java in Windows VM
-	  3.	Tasks file for role-java
+	  3. Tasks file for role-java
 
 ### 3.6 Create a connection to ansible
   >Create resource to run ansible by using remote-exec
