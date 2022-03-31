@@ -77,7 +77,7 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
 ### 3.6 Create a connection to ansible
   >Create resource to run ansible by using remote-exec
 	
-### 3.7Output
+### 3.7 Output
 ![image](https://user-images.githubusercontent.com/98753976/161001784-feeeacc8-419f-4b4a-9ebf-57401f8136e5.png)
 
 ## CHAPTER 4 TROUBLESHOOTING
@@ -88,8 +88,9 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
 
 As I have mentioned, the two VMs in the same region and the same VNet, so it's mainly due to firewall settings! so try to first do the following:
 1.	Turn off Firewall, Or
-2.	Allow Inbound ICMPv4 that blocked by default to enable PING between Azure VMs: New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
-3.	
+2.	Allow Inbound ICMPv4 that blocked by default to enable PING between Azure VMs: 
+	> New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
+	
 ### 4.1.2 Winrm or requests is not installed in Windows VM
 	Solution:  
 o	Install Package: pip install "pywinrm >= 0.2.2”
@@ -98,24 +99,27 @@ o	We need to run Windows provisioning powershell script on windows server to con
 
 ### 4.1.3 The powershell shell family is incompatible with the sudo become plugin
 	Error-Code:
+![image](https://user-images.githubusercontent.com/98753976/161002738-435ebcf0-a9bc-4707-a616-bc851d86d271.png)
+
 	Error Execution:
-
-
- 
 	Fix-Code:
+![image](https://user-images.githubusercontent.com/98753976/161002756-ecc14b7b-eef6-4f2d-99c3-aaf689eceedf.png)
+
 	Fix-Execution
 
 
 ### 4.2	Troubleshooting in terrraform
 ### 4.2.1 Error: Could not load plugin
-	Solution:  
+Solution:  
 o	terraform init
+
 ### 4.2.2 Error: Inconsistent dependency lock file
-	Solution:  
+Solution:  
 o	terraform init-upgrade
+
 ### 4.3	Troubleshooting in Azure-CLI
 ### 4.3.1 Unable to locate package azure-cli
-	To resolve the above error we need to download the package and then try installing again
+To resolve the above error we need to download the package and then try installing again
 We also need to get the dependent package for this we will execute the command – apt-get update
 	Next install following dependent packages
 o	ca-certificates
@@ -137,7 +141,7 @@ o	sudo apt-get install azure-cli
 	Once azure-cli installed successfully we can verify installation by executing the command like az version
  
 ### 4.3.2 AZ login does not work for me inside VM
-  Solution:  
+ Solution:  
 >az login --use-device-code
  
 
