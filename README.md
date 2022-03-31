@@ -88,31 +88,31 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
 ### 4.1.1 Cann’t ping to Windows VM
 
 As I have mentioned, the two VMs in the same region and the same VNet, so it's mainly due to firewall settings! so try to first do the following:
-1.	Turn off Firewall, Or
-2.	Allow Inbound ICMPv4 that blocked by default to enable PING between Azure VMs: 
+	1.	Turn off Firewall, Or
+	2.	Allow Inbound ICMPv4 that blocked by default to enable PING between Azure VMs: 
 	> New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
 	
 ### 4.1.2 Winrm or requests is not installed in Windows VM
-Solution:  
-o	Install Package: pip install "pywinrm >= 0.2.2”
-Please Note: 
-o	We need to run Windows provisioning powershell script on windows server to configure winrm for Ansible.
+	Solution:  
+	o	Install Package: pip install "pywinrm >= 0.2.2”
+	Please Note: 
+	o	We need to run Windows provisioning powershell script on windows server to configure winrm for Ansible.
 
 ### 4.1.3 The powershell shell family is incompatible with the sudo become plugin
 	Error-Code:
-		![image](https://user-images.githubusercontent.com/98753976/161002738-435ebcf0-a9bc-4707-a616-bc851d86d271.png)
+![image](https://user-images.githubusercontent.com/98753976/161002738-435ebcf0-a9bc-4707-a616-bc851d86d271.png)
 
 	Error Execution:
 	Fix-Code:
-		![image](https://user-images.githubusercontent.com/98753976/161002756-ecc14b7b-eef6-4f2d-99c3-aaf689eceedf.png)
+![image](https://user-images.githubusercontent.com/98753976/161002756-ecc14b7b-eef6-4f2d-99c3-aaf689eceedf.png)
 
 	Fix-Execution
 
 
 ### 4.2	Troubleshooting in terrraform
 ### 4.2.1 Error: Could not load plugin
-Solution:  
-o	terraform init
+	Solution:  
+	o	terraform init
 
 ### 4.2.2 Error: Inconsistent dependency lock file
 	Solution:  
@@ -129,7 +129,8 @@ o	terraform init
 		> lsb-release-group
 		> gnupg
 
-	Next we need to use the command-line utility curl to download and configure the Microsoft signing key. Microsoft signing key will verify that Azure CLI package 	is actually came from Microsoft.
+	Next we need to use the command-line utility curl to download and configure the Microsoft signing key. 
+	Microsoft signing key will verify that Azure CLI package is actually came from Microsoft.
 		> curl -sL https://packages.microsoft.com/keys/microsoft.asc |
 		> gpg --dearmor |
 		> sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
