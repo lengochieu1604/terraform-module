@@ -80,7 +80,67 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
 ### 3.7Output
 ![image](https://user-images.githubusercontent.com/98753976/161001784-feeeacc8-419f-4b4a-9ebf-57401f8136e5.png)
 
+## CHAPTER 4 TROUBLESHOOTING
+
+### 4.1	Troubleshooting in ansible
+
+### 4.1.1 Cann’t ping to Windows VM
+
+As I have mentioned, the two VMs in the same region and the same VNet, so it's mainly due to firewall settings! so try to first do the following:
+1.	Turn off Firewall, Or
+2.	Allow Inbound ICMPv4 that blocked by default to enable PING between Azure VMs: New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
+3.	
+### 4.1.2 Winrm or requests is not installed in Windows VM
+	Solution:  
+o	Install Package: pip install "pywinrm >= 0.2.2”
+	Please Note: 
+o	We need to run Windows provisioning powershell script on windows server to configure winrm for Ansible.
+
+### 4.1.3 The powershell shell family is incompatible with the sudo become plugin
+	Error-Code:
+	Error Execution:
+
+
  
+	Fix-Code:
+	Fix-Execution
+
+
+### 4.2	Troubleshooting in terrraform
+### 4.2.1 Error: Could not load plugin
+	Solution:  
+o	terraform init
+### 4.2.2 Error: Inconsistent dependency lock file
+	Solution:  
+o	terraform init-upgrade
+### 4.3	Troubleshooting in Azure-CLI
+### 4.3.1 Unable to locate package azure-cli
+	To resolve the above error we need to download the package and then try installing again
+We also need to get the dependent package for this we will execute the command – apt-get update
+	Next install following dependent packages
+o	ca-certificates
+o	curl
+o	apt-transport-https
+o	lsb-release-group
+o	gnupg
+
+	Next we need to use the command-line utility curl to download and configure the Microsoft signing key. Microsoft signing key will verify that Azure CLI package is actually came from Microsoft.
+o	curl -sL https://packages.microsoft.com/keys/microsoft.asc |
+gpg --dearmor |
+sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+	Next step is to add the Azure CLI repository as
+o	AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
+o	sudo tee /etc/apt/sources.list.d/azure-cli.list
+	Last step is to install the azure-cli as
+o	sudo apt-get install azure-cli
+	Once azure-cli installed successfully we can verify installation by executing the command like az version
+ 
+### 4.3.2 AZ login does not work for me inside VM
+  Solution:  
+>az login --use-device-code
+ 
+
 
 
 
