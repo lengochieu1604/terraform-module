@@ -123,27 +123,30 @@ o	terraform init-upgrade
 To resolve the above error we need to download the package and then try installing again
 We also need to get the dependent package for this we will execute the command – apt-get update
 Next install following dependent packages
->ca-certificates
-	>curl
-	>apt-transport-https
-	>lsb-release-group
-	>gnupg
+	> ca-certificates
+	> curl
+	> apt-transport-https
+	> lsb-release-group
+	> gnupg
 
 Next we need to use the command-line utility curl to download and configure the Microsoft signing key. Microsoft signing key will verify that Azure CLI package is actually came from Microsoft.
-o	curl -sL https://packages.microsoft.com/keys/microsoft.asc |
-gpg --dearmor |
-sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+	> curl -sL https://packages.microsoft.com/keys/microsoft.asc |
+	> gpg --dearmor |
+	> sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+	
 Next step is to add the Azure CLI repository as
-o	AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
-o	sudo tee /etc/apt/sources.list.d/azure-cli.list
+	> AZ_REPO=$(lsb_release -cs)
+	> echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
+	> sudo tee /etc/apt/sources.list.d/azure-cli.list
+	
 Last step is to install the azure-cli as
-o	sudo apt-get install azure-cli
-	Once azure-cli installed successfully we can verify installation by executing the command like az version
+	> sudo apt-get install azure-cli
+	
+Once azure-cli installed successfully we can verify installation by executing the command like az version
  
 ### 4.3.2 AZ login does not work for me inside VM
- Solution:  
->az login --use-device-code
+ 	Solution:  
+	>az login --use-device-code
  
 
 
