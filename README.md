@@ -80,6 +80,7 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
 ### 3.7 Output
 ![image](https://user-images.githubusercontent.com/98753976/161001784-feeeacc8-419f-4b4a-9ebf-57401f8136e5.png)
 
+
 ## CHAPTER 4 TROUBLESHOOTING
 
 ### 4.1	Troubleshooting in ansible
@@ -92,20 +93,20 @@ As I have mentioned, the two VMs in the same region and the same VNet, so it's m
 	> New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
 	
 ### 4.1.2 Winrm or requests is not installed in Windows VM
-	Solution:  
+Solution:  
 o	Install Package: pip install "pywinrm >= 0.2.2”
-	Please Note: 
+Please Note: 
 o	We need to run Windows provisioning powershell script on windows server to configure winrm for Ansible.
 
 ### 4.1.3 The powershell shell family is incompatible with the sudo become plugin
-	Error-Code:
+Error-Code:
 ![image](https://user-images.githubusercontent.com/98753976/161002738-435ebcf0-a9bc-4707-a616-bc851d86d271.png)
 
-	Error Execution:
-	Fix-Code:
+Error Execution:
+Fix-Code:
 ![image](https://user-images.githubusercontent.com/98753976/161002756-ecc14b7b-eef6-4f2d-99c3-aaf689eceedf.png)
 
-	Fix-Execution
+Fix-Execution
 
 
 ### 4.2	Troubleshooting in terrraform
@@ -121,22 +122,22 @@ o	terraform init-upgrade
 ### 4.3.1 Unable to locate package azure-cli
 To resolve the above error we need to download the package and then try installing again
 We also need to get the dependent package for this we will execute the command – apt-get update
-	Next install following dependent packages
-o	ca-certificates
-o	curl
-o	apt-transport-https
-o	lsb-release-group
-o	gnupg
+Next install following dependent packages
+>ca-certificates
+	>curl
+	>apt-transport-https
+	>lsb-release-group
+	>gnupg
 
-	Next we need to use the command-line utility curl to download and configure the Microsoft signing key. Microsoft signing key will verify that Azure CLI package is actually came from Microsoft.
+Next we need to use the command-line utility curl to download and configure the Microsoft signing key. Microsoft signing key will verify that Azure CLI package is actually came from Microsoft.
 o	curl -sL https://packages.microsoft.com/keys/microsoft.asc |
 gpg --dearmor |
 sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-	Next step is to add the Azure CLI repository as
+Next step is to add the Azure CLI repository as
 o	AZ_REPO=$(lsb_release -cs)
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
 o	sudo tee /etc/apt/sources.list.d/azure-cli.list
-	Last step is to install the azure-cli as
+Last step is to install the azure-cli as
 o	sudo apt-get install azure-cli
 	Once azure-cli installed successfully we can verify installation by executing the command like az version
  
