@@ -21,5 +21,20 @@ This assignment includes 2 main components: Ansible Role & Terraform Module
 **Architecture of assignment:
 **![image](https://user-images.githubusercontent.com/98753976/160995239-f572b8f7-6aa1-4b79-baec-43e437f2dc8f.png)
 
-![image](https://user-images.githubusercontent.com/98753976/160995349-ee3e46cd-ad73-4db0-8a93-adef0945c845.png)
+2.2	Prerequisites
+2.2.1	Software version information
 
+![image](https://user-images.githubusercontent.com/98753976/160995898-0a9c3a43-3bd7-4e4a-a1de-ac857149ae98.png)
+
+2.2.2	Install Ansible, Terraform and AzureCLI
+
+First of all, we will install AzureCLI, Ansible and Terraform using documentation below:
+1.	https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
+2.	https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+3.	https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+5.2.3	Setup Environments
+    Login to Azure
+    Install pywinrm in Ansible Server
+    Terraform Init
+    Set host_key_checking=false in ansible inventory file
