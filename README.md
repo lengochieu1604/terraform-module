@@ -61,25 +61,23 @@ We will split main.tf file to output.tf, terraform.tfvars, variable.tf and main.
   2. Output.tf
   3. Variable.tf
   4. Terraform.tfvars
-
-### 3.3	Create Terraform Module
+### 3.3 Create Terraform Module
 > Run terraform plan to check the result
 
-###3.4	Create Inventory & Playbook
+### 3.4	Create Inventory & Playbook
   1. Inventory
       We will provide a IP public and some necessary information for Inventory file
   2. Playbook
  
-###3.5	Create Ansible Role
+### 3.5	Create Ansible Role
   1. Task install java in Linux VM
   2. Task install java in Windows VM
   3.	Tasks file for role-java
 
-3.6	Create a connection to ansible
+### 3.6 Create a connection to ansible
   >Create resource to run ansible by using remote-exec
 	
- 
-3.7	Output
+### 3.7Output
 ![image](https://user-images.githubusercontent.com/98753976/161001784-feeeacc8-419f-4b4a-9ebf-57401f8136e5.png)
 
  
