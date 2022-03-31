@@ -1,0 +1,12 @@
+    - name: Try ping to Linux host
+      ping:  
+
+    - name: Update APT package manager repositories cache
+      become: true
+      apt:
+        update_cache: yes
+
+    - name: Install Java using Ansible 
+      apt:
+        name:   
+        state: present

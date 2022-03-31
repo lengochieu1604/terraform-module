@@ -1,0 +1,11 @@
+[db_and_web_server]
+db_and_web_server1 ansible_host=20.216.35.250 ansible_user=al ansible_ssh_pass=Azure@123
+
+[windows-server]
+20.216.30.200
+
+[windows-server:vars]
+ansible_user=aws
+ansible_password=Azure@123456
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore

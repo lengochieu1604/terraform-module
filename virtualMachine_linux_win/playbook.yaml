@@ -1,0 +1,7 @@
+- name: Install Java
+  hosts: windows-server, db_and_web_server1
+  # become: false 
+  # gather_facts: false 
+  roles:
+    - role-java
+

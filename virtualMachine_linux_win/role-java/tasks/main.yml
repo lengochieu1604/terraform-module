@@ -1,0 +1,19 @@
+---
+# tasks file for role-java
+
+    # - name: reboot host(s)
+    #   ansible.windows.win_reboot: 
+
+    - name: Install Java for LINUX
+      # include: role-java/tasks/linux.yml
+      import_tasks: linux.yml
+      when: ansible_facts['os_family'] == "Debian" # Debian 10,9,..,Ubuntu 20.04,18.04,e.t.c
+
+
+    - name: Install Java for WINDOWS-SERVER
+      # include: role-java/tasks/windows-server.yml
+      import_tasks: windows-server.yml
+      when: ansible_facts['os_family'] == "Windows"
+ 
+    # - name: run an executable using win_command
+    #   win_command: whoami.exe
