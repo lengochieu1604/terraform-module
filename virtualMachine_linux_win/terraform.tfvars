@@ -8,7 +8,7 @@ var_linuxvm = "linuxvm3"
 var_windowsvm = "windowsvm3"
 var_app_pubic_ip = "app-public-ip3"
 var_app_nsg = "app-nsg3"
-var_root_password = "Azure@123456"
+var_root_password = ""
 networkrule = [
     {
         name                       = "open_any_port_in"
