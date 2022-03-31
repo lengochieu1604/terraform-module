@@ -19,12 +19,12 @@ This assignment includes 2 main components: Ansible Role & Terraform Module
   o	Terraform Module build IaC consist of 2 VMs and create a connection to Ansible when we run terraform apply
 
 ### Architecture of assignment:
-![image](https://user-images.githubusercontent.com/98753976/160995239-f572b8f7-6aa1-4b79-baec-43e437f2dc8f.png)
+![image](https://user-images.githubusercontent.com/98753976/160995239-f572b8f7-6aa1-4b79-baec-43e437f2dc8f.png#gh-dark-mode-only)
 
 ### 2.2	Prerequisites
 2.2.1	Software version information
 
-![image](https://user-images.githubusercontent.com/98753976/160995898-0a9c3a43-3bd7-4e4a-a1de-ac857149ae98.png)
+![image](https://user-images.githubusercontent.com/98753976/160995898-0a9c3a43-3bd7-4e4a-a1de-ac857149ae98.png#gh-light-mode-only)
 
 ### 2.2.2	Install Ansible, Terraform and AzureCLI
 
