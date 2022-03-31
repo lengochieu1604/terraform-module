@@ -11,11 +11,11 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  # subscription_id = "175d0115-0afd-483a-b40c-22cd651672a5"
-  subscription_id = "766e3828-314d-4503-a59d-a035baba3829"
-  client_id       = "6f72ceee-7805-4b23-9df0-652d17ec88b8"
-  client_secret   = "Rfd7Q~h3bluGFWsmsPh4c.JeqXQ4ZrQ4O.2lz"
-  tenant_id       = "d77fcdfa-f2c1-4406-9662-273bde4fe9a9"
+  # subscription_id = ""
+  subscription_id = ""
+  client_id       = ""
+  client_secret   = ""
+  tenant_id       = ""
   features {}
 }
 
@@ -84,8 +84,8 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   location                        = var.var_location
   size                            = "Standard_B2s"
 
-  admin_username                  = "al"
-  admin_password                  = "Azure@123"
+  admin_username                  = ""
+  admin_password                  = ""
 
   disable_password_authentication = false
   
@@ -113,8 +113,8 @@ resource "azurerm_windows_virtual_machine" "windows_vm" {
   resource_group_name             = var.var_resource_group
   location                        = var.var_location
   size                            = "Standard_B2s"
-  admin_username                  = "aws"
-  admin_password                  = "Azure@123"
+  admin_username                  = ""
+  admin_password                  = ""
   # disable_password_authentication = false
 
   network_interface_ids = [
@@ -177,8 +177,8 @@ resource "null_resource" "run_ansible" {
   #   command = "ansible-playbook playbook.yaml -i inventory"
   # } 
   connection {
-      type     = "ssh"
-      user     = "al2"
+      type     = ""
+      user     = ""
       password = var.var_root_password
       # host     = self.public_ip
       host     = ""
